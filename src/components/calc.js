@@ -164,6 +164,10 @@ constructor(props) {
     this.setState({ shifty : !this.state.shifty })
   }
 
+  toRad() {
+    this.setState({ rad : !this.state.rad })
+  }
+
   render() {
     let Ans = this.state.result
   return(
@@ -188,7 +192,7 @@ constructor(props) {
           <button className="shift" onClick={() => this.enterNumber('atan(')}>Tan<sup>-1</sup></button> :
           <button onClick={() => this.enterNumber('tan(')}>Tan</button>}
         {this.state.shifty ?
-          <button className="shift" onClick={() => this.enterNumber('')}>Log<sub>2</sub></button> :
+          <button className="shift" onClick={() => this.enterNumber('')} disabled={true}>Log<sub>2</sub></button> :
           <button onClick={() => this.enterNumber('log(')}>Log</button>}
         {this.state.shifty ?
           <button className="shift" onClick={() => this.enterNumber('e')}>e</button> :
@@ -198,10 +202,12 @@ constructor(props) {
         <button onClick={() => this.enterNumber('*10^')}>x10<sup>x</sup></button>
         <button onClick={() => this.enterNumber(this.state.clear ? `${Ans}^(` : '^(')}>x<sup>x</sup></button>
         <button onClick={() => this.enterNumber('√(')}>√</button>
-        <button onClick={() => this.enterNumber('!')}>!</button>
-        <button onClick={() => this.enterNumber('%')}>%</button>
+        {this.state.shifty ?
+          <button className="shift" onClick={() => this.enterNumber('!')}>!</button> :
+          <button onClick={() => this.enterNumber('%')}>%</button>}
         <button onClick={() => this.convertFraction(this.state.result)}>S=D</button>
         <button onClick={() => this.enterNumber('π')}>&pi;</button>
+        <button onClick={() => this.toRad()}><span style={this.state.rad ? {} : {color: '#bb4430'}}>D</span>-<span style={this.state.rad ? {color: '#bb4430'} : {}}>R</span></button>
         <button className='eval-button-2' onClick={() => this.ans()}>Ans</button>
       </div>
       <div className='simple-func'>
