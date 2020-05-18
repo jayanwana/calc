@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
@@ -13,16 +21,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -35,4 +33,112 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.input-group .calc {
+  height: 20px;
+  border-radius: 5px 5px 0 0;
+  padding-bottom: none;
+  border-bottom: none;
+}
+
+.input-group .result {
+  height: 30px;
+  border-radius: 0px 0px 5px 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-top: none;
+  padding-top: none;
+  text-align: right;
+}
+
+.calc-wrapper {
+  width: 320px;
+  background-color: #282c34;
+  border-radius: 25px;
+  align-self: center;
+}
+
+button {
+   margin: 3px;
+  width: 40px;
+  border: 0;
+  height: 25px;
+  border-radius: 4px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.numbers{
+  margin: 10px 10px 2em 10px;
+}
+
+.simple-func {
+  margin: 10px 10px 0px 10px;
+}
+
+.comp-func {
+  margin: 10px 5px 0px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.eval-button{
+  background-color: #bb4430 !important;
+}
+
+.eval-button-2{
+  background-color: violet !important;
+}
+.shift {
+  background-color: yellow !important;
+  color: black !important;
+  }
+.control {
+  margin: 10px 5px 0px 5px;
+}
+
+.control button {
+  background-color: #bb4430;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 15%;
+  color: white;
+}
+
+.numbers button {
+  background-color: #6d5a72;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 25%;
+  color: white;
+}
+
+.simple-func button {
+  background-color: cyan;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 20%;
+
+}
+
+.comp-func button {
+  background-color: #87c38f;
+  width: 15%;
+
+}
+
+.eval button {
+  background-color: violet;
 }
