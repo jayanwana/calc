@@ -53,7 +53,7 @@ constructor(props) {
     function acos(x) { return Math.acos(x) * (rad ? 1 : toDeg)};
     function atan(x) { return Math.atan(x) * (rad ? 1 : toDeg)};
     function efunc(x=1) { return x * Math.E};
-    function factorial(x) { return (x != 1) ? x * factorial(x - 1) : 1};
+    function factorial(x) { return (x !== 1) ? x * factorial(x - 1) : 1};
     function percent(x) { return x/100 };
     if (y) {
       try {
@@ -207,7 +207,10 @@ constructor(props) {
           <button onClick={() => this.enterNumber('%')}>%</button>}
         <button onClick={() => this.convertFraction(this.state.result)}>S=D</button>
         <button onClick={() => this.enterNumber('π')}>&pi;</button>
-        <button onClick={() => this.toRad()}><span style={this.state.rad ? {} : {color: '#bb4430'}}>D</span>-<span style={this.state.rad ? {color: '#bb4430'} : {}}>R</span></button>
+        <button onClick={() => this.toRad()}>
+          <span style={this.state.rad ? {} : {color: '#bb4430'}}>D</span>-
+          <span style={this.state.rad ? {color: '#bb4430'} : {}}>R</span>
+        </button>
         <button className='eval-button-2' onClick={() => this.ans()}>Ans</button>
       </div>
       <div className='simple-func'>
